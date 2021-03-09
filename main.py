@@ -1,11 +1,17 @@
 from art import logo, vs
 from game_data import data
 from random import randint
+import os
+
+def clear_screen():
+    os.system("clear") # Linux - OSX
+    os.system("cls") # Windows
 
 def print_player(player):
     return f"{player['name']}, {player['description']}, from {player['country']}"
 
 def play_game(score):
+    clear_screen()
     data_length = len(data) - 1
     player_a = data[randint(0, data_length)]
     player_b = data[randint(0, data_length)]
